@@ -5,7 +5,7 @@ export default class Posts extends React.Component {
   render() {
     return (
       <View>
-
+        <Text style={{fontSize: 30}}>Posts</Text>
       </View>
     );
   }
