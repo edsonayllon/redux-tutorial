@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Posts from './components/Posts';
+import PostForm from './components/PostForm';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Posts/>
+        <PostForm />
+        <View style={{borderBottomWidth: 1, width: '100%', margin: 50, marginHorizontal: 0}}></View>
+        <Posts />
       </View>
     );
   }
@@ -16,8 +19,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 50,
   },
   image: {
     width: 100,
