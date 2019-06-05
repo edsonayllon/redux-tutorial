@@ -1,10 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default class PostForm extends React.Component {
   state = {
     title: '',
     body: ''
+  }
+
+  onSubmit = async () => {
+    const post = {
+      title: this.state.title,
+      body: this.state.body
+    }
+
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(post)
+    });
+
+    const json = await res.json();
+
+    console.log(json);
+
   }
 
   render() {
@@ -25,6 +45,11 @@ export default class PostForm extends React.Component {
           placeholder="Body"
           onChangeText={(body) => this.setState({body}) }
           value={this.state.body}
+        />
+        <Button
+          onPress={this.onSubmit}
+          title="Post"
+          color="#841584"
         />
       </View>
     );

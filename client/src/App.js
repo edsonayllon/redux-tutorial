@@ -2,15 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Posts from './components/Posts';
 import PostForm from './components/PostForm';
+import { Provider } from 'react-redux';
+import store from './store';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <PostForm />
-        <View style={{borderBottomWidth: 1, width: '100%', margin: 50, marginHorizontal: 0}}></View>
-        <Posts />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <PostForm />
+          <View style={{borderBottomWidth: 1, width: '100%', margin: 50, marginHorizontal: 0}}></View>
+          <Posts />
+        </View>
+      </Provider>
     );
   }
 }
