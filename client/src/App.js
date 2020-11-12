@@ -14,11 +14,11 @@ function App() {
         <p>
           count: {count}
         </p>
+        <button onClick={ () => dispatch({ type: 'INCREMENT' }) }>+</button>
+        <button onClick={ () => dispatch({ type: 'DECREMENT' }) }>-</button>
         <p>
           { isLogged ? 'Logged in' : 'Logged off'}
         </p>
-        <button onClick={ () => dispatch({ type: 'INCREMENT' }) }>+</button>
-        <button onClick={ () => dispatch({ type: 'DECREMENT' }) }>-</button>
       </header>
     </div>
   );
