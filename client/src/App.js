@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useCount } from 'hooks/useCount'
 
 function App() {
+  const count = useCount();
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          count: {count}
         </p>
         <a
           className="App-link"
